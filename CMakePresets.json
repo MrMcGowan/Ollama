@@ -19,10 +19,19 @@
       "inherits": [ "Default" ]
     },
     {
+      "name": "CUDA K80",
+      "inherits": [ "CUDA" ],
+      "cacheVariables": {
+        "CMAKE_CUDA_ARCHITECTURES": "37",
+        "CMAKE_CUDA_FLAGS": "-Wno-deprecated-gpu-targets -t 2",
+        "OLLAMA_RUNNER_DIR": "cuda_k80"
+      }
+    },
+    {
       "name": "CUDA 11",
       "inherits": [ "CUDA" ],
       "cacheVariables": {
-        "CMAKE_CUDA_ARCHITECTURES": "50-virtual;60-virtual;61-virtual;70-virtual;75-virtual;80-virtual;86-virtual;87-virtual;89-virtual;90-virtual",
+        "CMAKE_CUDA_ARCHITECTURES": "37;50-virtual;60-virtual;61-virtual;70-virtual;75-virtual;80-virtual;86-virtual;87-virtual;89-virtual;90-virtual",
         "CMAKE_CUDA_FLAGS": "-Wno-deprecated-gpu-targets -t 2",
         "OLLAMA_RUNNER_DIR": "cuda_v11"
       }
@@ -122,6 +131,11 @@
       "name": "CUDA",
       "configurePreset": "CUDA",
       "targets": [ "ggml-cuda" ]
+    },
+    {
+      "name": "CUDA K80",
+      "inherits": [ "CUDA" ],
+      "configurePreset": "CUDA K80"
     },
     {
       "name": "CUDA 11",

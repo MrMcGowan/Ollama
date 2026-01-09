@@ -357,10 +357,8 @@ checkEnv
 try {
     if ($($args.count) -eq 0) {
         cpu
-        cuda12
-        cuda13
-        rocm
-        vulkan
+        cuda11
+        cudaK80
         ollama
         app
         deps
